@@ -21,4 +21,6 @@ from user_login import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',views.index,name='index'),
+    url(r'^archivoDigital/',views.archivoDigital,name='archivoDigital'),
+    url(r'^logout/$', views.user_logout, name='logout'),
 ]

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <!------ Include the above in your HEAD tag ---------->
+  <!-- Include the above in your HEAD tag -->
 </head>
   <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -18,6 +18,9 @@
           </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a class="navbar-link" href="{% url 'admin:index' %}">Administración</a></li>
+          {% if user.is_authenticated %}
+            <li><a class="navbar-link" href="{% url 'logout' %}">Salir</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
